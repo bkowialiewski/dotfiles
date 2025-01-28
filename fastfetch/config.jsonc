@@ -1,0 +1,105 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "display": {
+    "color": "red"
+  },
+      "logo": {
+        "padding": {
+            "top": 1,
+            "left": 3
+        },
+        "type": "small",
+        "color": {
+          "1": "blue",
+          "2": "blue"
+        }
+    },
+  "modules": [
+    {
+      "type": "title",
+      "color": {
+        "user": "green",
+        "at": "white",
+        "host": "blue"
+      },
+      "key": "   ",
+      "keyColor": "white"
+    },
+    {
+      "type": "custom",
+      "format": "┌───────────────────────────────┐",
+      "outputColor": "white"
+    },
+    // {
+    //   "type": "os",
+    //   "key": "  󰣇 ",
+    //   "keyColor": "cyan"
+    // },
+    {
+      "type": "custom",
+      "format": "  {#36} {#37}: NixOS x86_64",
+      "outputColor": "white"
+    },
+    {
+      "type": "wm",
+      "key": "   ",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "terminal",
+      "key": "   ",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "memory",
+      "key": "  󰍛 ",
+      "keyColor": "cyan"
+    },
+    // {
+    //   "type": "packages",
+    //   "key": "   ",
+    //   "keyColor": "cyan"
+    // },
+
+    // "os",
+    // "host",
+    // "kernel",
+    // "uptime",
+    // "packages",
+    // "shell",
+    // "display",
+    // "de",
+    // "wmtheme",
+    // "theme",
+    // "icons",
+    // "font",
+    // "cursor",
+    // "terminal",
+    // "terminalfont",
+    // "cpu",
+    // "gpu",
+    // "memory",
+    // "swap",
+    // "disk",
+    // "localip",
+    // "battery",
+    // "poweradapter",
+    // "locale",
+
+    {
+      "type": "custom",
+      "format": "└───────────────────────────────┘",
+      "outputColor": "white"
+    },
+
+    {
+      "type": "custom",
+
+      "format": "  {#31}   {#32}   {#33}   {#34}   {#35}   {#36}   {#37}   {#30} "
+      // "outputColor": "dim_"
+
+    }
+
+    // "colors"
+  ]
+}

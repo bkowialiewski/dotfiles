@@ -1,0 +1,38 @@
+### Sway configuration file
+
+include $HOME/.config/sway/key_bindings.conf
+include $HOME/.config/sway/workspaces.conf
+include $HOME/.config/sway/theme.conf
+include $HOME/.config/sway/status_bar.conf
+
+exec wl-paste --watch cliphist store
+
+# screen dpi
+output eDP-1 scale 1.2
+# define touchpad properties
+input type:touchpad {
+    tap enabled
+    middle_emulation enabled
+}
+# keyboard properties
+input type:keyboard {
+    xkb_layout be
+    xkb_options grp:rctrl_toggle
+    xkb_numlock enabled
+    repeat_delay 300
+    repeat_rate 40
+}
+
+# hide cursor after period of inactivity
+seat seat0 hide_cursor 5000
+
+# restart kanshi and other functionalities
+exec_always $HOME/.config/sway/scripts/restart_applications.sh
+# exec_always pkill kanshi && sleep 2 && kanshi &
+# exec_always pkill waybar && sleep 1 && waybar &
+# autotiling functionality when opening new windows
+exec_always autotiling
+# disable xwayland -- this might create scaling problems for some applications
+exec xwayland disable
+# not sure why this is required
+include /etc/sway/config.d/*

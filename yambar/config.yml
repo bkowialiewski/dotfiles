@@ -1,0 +1,106 @@
+# fonts we'll be re-using here and there
+# modules_font: &modules_font JetBrainsMono Nerd Font Propo:pixelsize=32
+# modules_font_bold: &modules_font_bold JetBrainsMono Nerd Font Propo:bold:pixelsize=32
+modules_font: &modules_font JetBrainsMono NL:pixelsize=32
+modules_font_bold: &modules_font_bold JetBrainsMono NL:bold:pixelsize=32
+
+# This is THE bar configuration
+bar:
+  height: 65
+  location: top
+  spacing: 10
+  margin: 45
+  # font: JetBrainsMono Nerd Font Propo:pixelsize=25
+  font: JetBrainsMono NL:pixelsize=25
+  foreground: c8c8c8ff
+  background: 1e212fff
+
+  left:
+    - i3:
+        content:
+          "":
+            map:
+              default:
+                - string:
+                    foreground: 5b6078ff
+                    text: "  "
+              conditions:
+                state == focused:
+                  - string:
+                      foreground: c8c8c8ff
+                      text: "  "
+          current:
+            map:
+              default:
+                - string:
+                    font: *modules_font_bold
+                    foreground: 6a7b94ff
+                    text: "  {application}"
+              conditions:
+                application == "foot":
+                  - string:
+                      font: *modules_font_bold
+                      foreground: 6a7b94ff
+                      text: "  terminal"
+        sort: ascending
+
+  center:
+    - clock:
+        date-format: "%a %d %b"
+        time-format: "%H:%M"
+        content:
+          - string:
+              font: *modules_font
+              foreground: d8dee9ff
+              text: "{date} {time}"
+          # string: {text: "{date} {time}", foreground: d8dee9ff}
+
+  right:
+    - cpu:
+        poll-interval: 2500
+        content:
+          map:
+            conditions:
+              id < 0:
+                - string:
+                    font: *modules_font
+                    foreground: ebcb8bff
+                    text: "[cpu: {cpu}%]"
+    - pulse:
+        content:
+          map:
+            conditions:
+              sink_muted:
+                - string:
+                    font: *modules_font
+                    foreground: d8dee9ff
+                    text: "[vol: mut]"
+              ~sink_muted:
+                - string:
+                    font: *modules_font
+                    foreground: d8dee9ff
+                    text: "[vol: {sink_percent}%]"
+
+    - battery:
+        name: BAT1
+        poll-interval: 5000
+        content:
+          map:
+            default:
+              - string:
+                  font: *modules_font
+                  foreground: d8dee9ff
+                  text: "[bat: {capacity}%]"
+            conditions:
+              state == "charging":
+                - string:
+                    font: *modules_font
+                    foreground: afd383ff
+                    text: "[bat: {capacity}%]"
+              capacity < 15:
+                - string:
+                    font: *modules_font
+                    foreground: ff0000ff
+                    text: "[bat: {capacity}%]"
+
+
