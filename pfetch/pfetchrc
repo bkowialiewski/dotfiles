@@ -1,0 +1,14 @@
+PF_INFO="ascii title os kernel de shell editor memory uptime palette"
+
+PF_SEP=":"
+
+PF_COLOR=1
+PF_COL1=4
+PF_COL2=8
+PF_COL3=1
+
+PF_ALIGN=10
+
+PF_ASCII="linux"
+
+PF_FAST_PKG_COUNT=1

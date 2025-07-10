@@ -1,0 +1,7 @@
+# Insert your preferred key mappings here.
+
+unmap f
+unmap F
+
+map s LinkHints.activateMode
+map S LinkHints.activateModeToOpenInNewTab
