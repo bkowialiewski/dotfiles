@@ -83,19 +83,12 @@ map('v', 'k', 'gk')
 map('v', 'j', 'gj')
 
 -- automatically close a bracket when opening one
--- map('i', '(', '()<Esc>i')
--- map('i', '{', '{}<Esc>i')
--- map('i', '[', '[]<Esc>i')
--- map('i', '<', '<><Esc>i')
--- map('i', '"', '""<Esc>i')
--- map('i', "'", "''<Esc>i")
-
-map("i", "\'\'", "\'\'<left>")
-map("i", "\"\"", "\"\"<left>")
-map("i", "[[", "[]<left>")
-map("i", "((", "()<left>")
-map("i", "{{", "{}<left>")
-map("i", "<<", "<><left>")
+-- -- map('i', '(', '()<Esc>i')
+-- -- map('i', '{', '{}<Esc>i')
+-- -- map('i', '[', '[]<Esc>i')
+-- -- map('i', '<', '<><Esc>i')
+-- -- map('i', '"', '""<Esc>i')
+-- -- map('i', "'", "''<Esc>i")
 
 -- replace selected text
 map("v", "<leader>r", "\"hy:%s/<C-r>h//g<left><left>")
