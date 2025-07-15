@@ -7,11 +7,11 @@ indicator-radius=120
 indicator-thickness=8
 
 bs-hl-color=BF616A
-key-hl-color=81A1C1
+key-hl-color=E5E9F
 
 inside-color=00000000
 inside-clear-color=E5E9F06B
-inside-caps-lock-color=93ccdc
+inside-caps-lock-color=E5E9F06B
 inside-ver-color=E5E9F06B
 inside-wrong-color=E5E9F06B
 
