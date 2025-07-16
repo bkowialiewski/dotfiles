@@ -1,0 +1,39 @@
+# Zathura configuration file
+# See man `man zathurarc'
+
+set font "JetBrainsMono Nerd Font 10"
+# Open document in fit-width mode by default
+set adjust-open "best-fit"
+# copy selection to clipboard
+set selection-clipboard clipboard
+# One page per row by default
+set pages-per-row 1
+
+#stop at page boundries
+set scroll-page-aware "true"
+# set smooth-scroll "true"
+set scroll-full-overlap 0.01
+
+set render-loading false
+set scroll-step 50
+
+#zoom settings
+set zoom-step 15
+# display status bar (s) and vertical (v) scroll bar
+set guioptions "sv"
+# displace while typing
+set incremental-search true
+# save last viewed page
+set open-first-page false
+# gap between pages
+set page-padding 25
+
+# scroll up and down
+map d scroll half-down
+map u scroll half-up
+
+# allows copy the current file path into the clipboard
+map y focus_inputbar ":exec bash -c \"printf \\\"$FILE\\\" | wl-copy\""
+
+# map j feedkeys "<C-Down>"
+# map k feedkeys "<C-Up>"
