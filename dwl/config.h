@@ -133,7 +133,6 @@ static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TA
 /* commands */
 static const char *termcmd[] = { "foot", NULL };
 static const char *menucmd[] = { "fuzzel", NULL };
-// static const char *menucmd[] = { "wmenu-run", "-b", "-l 10", "-f JetBrains Mono NerdFont 16px", "-i", "-N 1A1D21FF", "-n CDCECFFF", "-S 3B4252FF", NULL };
 static const char *screenshot_select[] = { "screenshot_select", NULL };
 static const char *screenshot_full[] = { "screenshot_full", NULL };
 static const char *brightness_up[] = { "brightnessctl", "set", "5%+", NULL };
