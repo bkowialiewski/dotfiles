@@ -9,6 +9,6 @@ PF_COL3=1
 
 PF_ALIGN=10
 
-PF_ASCII="linux"
+PF_ASCII="arch"
 
 PF_FAST_PKG_COUNT=1

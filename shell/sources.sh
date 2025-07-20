@@ -1,0 +1,5 @@
+. "$HOME/.config/fzf/fzfrc.sh"
+. "$HOME/.config/fzf/completion.bash"
+. "$HOME/.config/fzf/key-bindings.bash"
+. "$HOME/.cargo/env"
+. "$HOME/.cargo/bin"

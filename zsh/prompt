@@ -1,0 +1,2 @@
+PS1='%K{#2a323f} %k%K{#26303e} %k%K{#222f3d} %k%K{#1e2d3c} %F{#E5E9F0}%~%f  %k%F{#1e2d3c} %f
+%F{#BF616A}❯%f${vcs_info_msg_0_} '
