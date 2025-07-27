@@ -18,23 +18,20 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 
     -- themes
-    { "edeneast/nightfox.nvim" },
-
+    "edeneast/nightfox.nvim",
     -- allows easy commenting
-    { 'numtostr/comment.nvim', opts = {}, lazy = false },
-
+    "numtostr/comment.nvim",
     -- fuzzy finder
-    { 'junegunn/fzf' },
-    { 'junegunn/fzf.vim' },
-
+    "junegunn/fzf",
+    "junegunn/fzf.vim",
+    -- display hexadecimal colors
+    "norcalli/nvim-colorizer.lua",
     -- to indent automatically
     { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 
-    -- display hexadecimal colors
-    -- { 'norcalli/nvim-colorizer.lua' },
-
     -- syntax highlighting
-    { "nvim-treesitter/nvim-treesitter",
+    {
+        "nvim-treesitter/nvim-treesitter",
 
         build = ":tsupdate",
         config = function () 
@@ -50,7 +47,7 @@ require("lazy").setup({
         end
     },
 
-    -- visualize csv files using nvim
+    -- visualize csv files
     {
         "hat0uma/csvview.nvim",
         ---@module "csvview"
@@ -101,6 +98,7 @@ require("lazy").setup({
                 desc = "Resume the last yazi session",
             },
         },
+
         ---@type YaziConfig | {}
         opts = {
             -- if you want to open yazi instead of netrw, see below for more info
@@ -109,6 +107,7 @@ require("lazy").setup({
                 show_help = "<f1>",
             },
         },
+
         -- 👇 if you use `open_for_directories=true`, this is recommended
         init = function()
             -- More details: https://github.com/mikavilpas/yazi.nvim/issues/802
