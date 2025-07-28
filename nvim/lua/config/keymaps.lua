@@ -1,14 +1,11 @@
 -- functional wrapper for keymaps
-function map(m, k, v)
-    vim.keymap.set(m, k, v, { silent = true })
+function map(mode, lhs, rhs, opts)
+    local options = { noremap = true }
+    if opts then
+        options = vim.tbl_extend("force", options, opts)
+    end
+    vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
--- function map(mode, lhs, rhs, opts)
---     local options = { noremap = true }
---     if opts then
---         options = vim.tbl_extend("force", options, opts)
---     end
---     vim.api.nvim_set_keymap(mode, lhs, rhs, options)
--- end
 
 -- remap lead key
 map('n', '<Space>', '<Nop>')
