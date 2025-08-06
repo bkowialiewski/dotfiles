@@ -6,19 +6,16 @@
 /* appearance */
 static const int sloppyfocus               = 1;  /* focus follows mouse */
 static const int bypass_surface_visibility = 0;  /* 1 means idle inhibitors will disable idle tracking even if it's surface isn't visible  */
-static const int smartgaps                 = 0;  /* 1 means no outer gap when there is only one window */
-static int gaps                            = 1;  /* 1 means gaps between windows are added */
-static const unsigned int gappx            = 10; /* gap pixel between windows */
 static const unsigned int borderpx         = 2;  /* border pixel of windows */
 static const float rootcolor[]             = COLOR(0x222222ff);
-static const float bordercolor[]           = COLOR(0x2e3440ff);
+static const float bordercolor[]           = COLOR(0x444444ff);
 static const float focuscolor[]            = COLOR(0xbf616aff);
 static const float urgentcolor[]           = COLOR(0xff0000ff);
 /* This conforms to the xdg-protocol. Set the alpha to zero to restore the old behavior */
 static const float fullscreen_bg[]         = {0.1f, 0.1f, 0.1f, 1.0f}; /* You can also use glsl colors */
 
 /* tagging - TAGCOUNT must be no greater than 31 */
-#define TAGCOUNT (9)
+#define TAGCOUNT (10)
 
 /* logging */
 static int log_level = WLR_ERROR;
@@ -71,7 +68,6 @@ static const struct xkb_rule_names xkb_rules = {
 static const int numlock = 1;
 static const int capslock = 0;
 
-/* keyboard rates */
 static const int repeat_rate = 50;
 static const int repeat_delay = 300;
 
@@ -133,7 +129,6 @@ static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TA
 /* commands */
 static const char *termcmd[] = { "foot", NULL };
 static const char *menucmd[] = { "fuzzel", NULL };
-// static const char *menucmd[] = { "wmenu-run", "-b", "-l 10", "-f JetBrains Mono NerdFont 16px", "-i", "-N 1A1D21FF", "-n CDCECFFF", "-S 3B4252FF", NULL };
 static const char *screenshot_select[] = { "screenshot_select", NULL };
 static const char *screenshot_full[] = { "screenshot_full", NULL };
 static const char *brightness_up[] = { "brightnessctl", "set", "5%+", NULL };
@@ -178,7 +173,6 @@ static const Key keys[] = {
 	{ MODKEY,                    -1, XKB_KEY_l,          setmfact,       {.f = +0.05f} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, -1, XKB_KEY_Return,     zoom,           {0} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, -1, XKB_KEY_Tab,        view,           {0} },
-	// { MODKEY,                    -1, XKB_KEY_g,          togglegaps,     {0} },
 	{ MODKEY,                    -1, XKB_KEY_q,          killclient,     {0} },
 	{ MODKEY,                    -1, XKB_KEY_t,          setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                    -1, XKB_KEY_e,          setlayout,      {.v = &layouts[1]} },
