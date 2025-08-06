@@ -19,6 +19,7 @@ require("lazy").setup({
 
     -- themes
     "edeneast/nightfox.nvim",
+    	"rose-pine/neovim",
     -- allows easy commenting
     "numtostr/comment.nvim",
     -- fuzzy finder
@@ -128,4 +129,3 @@ require("lazy").setup({
     }
 
 })
-
