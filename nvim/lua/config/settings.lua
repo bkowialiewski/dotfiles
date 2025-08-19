@@ -62,6 +62,8 @@ c("syntax on")
 c("set path+=**")
 
 c.colorscheme("nordfox")
+-- c.colorscheme("kanagawa-wave")
+-- c.colorscheme("lunaperche")
 
 require("colorizer").setup()
 
