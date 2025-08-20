@@ -42,6 +42,10 @@ map('n', 'K', ':tabn<CR>')
 map('n', 'J', ':tabp<CR>')
 -- open a file in current tab using fuzzy finder
 map('n', '<leader>f', ':Files<CR>')
+-- select a specific line in an available buffer
+map('n', '<leader>l', ':Lines<CR>')
+-- select an available buffer
+map('n', '<leader>b', ':Buffers<CR>')
 
 -- scroll down and center the cursor
 map('n', '<C-d>', '<C-d>zz')
