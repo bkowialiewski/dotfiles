@@ -133,9 +133,14 @@ static const char *screenshot_select[] = { "screenshot_select", NULL };
 static const char *screenshot_full[] = { "screenshot_full", NULL };
 static const char *brightness_up[] = { "brightnessctl", "set", "5%+", NULL };
 static const char *brightness_down[] = { "brightnessctl", "set", "5%-", NULL };
+
 static const char *volume_up[] = { "wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "5%+", NULL };
 static const char *volume_down[] = { "wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "5%-", NULL };
 static const char *volume_mute[] = { "wpctl", "set-mute", "@DEFAULT_AUDIO_SINK@", "toggle", NULL };
+static const char *audio_toggle[] = { "playerctl", "play-pause", NULL };
+static const char *audio_next[] = { "playerctl", "next", NULL };
+static const char *audio_prev[] = { "playerctl", "previous", NULL };
+
 static const char *networkmanager_dmenu[] = { "networkmanager_dmenu", NULL };
 static const char *dmenu_bluetooth[] = { "launch_bluetooth", NULL };
 static const char *cliphist[] = { "launch_cliphist", NULL };
@@ -164,6 +169,9 @@ static const Key keys[] = {
 	{ 0, -1, XKB_KEY_XF86AudioRaiseVolume,               spawn,          {.v = volume_up} },
 	{ 0, -1, XKB_KEY_XF86AudioLowerVolume,               spawn,          {.v = volume_down} },
 	{ 0, -1, XKB_KEY_XF86AudioMute,                      spawn,          {.v = volume_mute} },
+	{ 0, -1, XKB_KEY_XF86AudioPlay,                      spawn,          {.v = audio_toggle} },
+	{ 0, -1, XKB_KEY_XF86AudioNext,                      spawn,          {.v = audio_next} },
+	{ 0, -1, XKB_KEY_XF86AudioPrev,                      spawn,          {.v = audio_prev} },
 
 	{ MODKEY,                    -1, XKB_KEY_j,          focusstack,     {.i = +1} },
 	{ MODKEY,                    -1, XKB_KEY_k,          focusstack,     {.i = -1} },

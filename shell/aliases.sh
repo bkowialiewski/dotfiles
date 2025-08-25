@@ -38,6 +38,3 @@ alias rm='rm -vi'
 alias count="ls | wc -l"
 # display calendar
 alias cal="cal -m"
-
-# Force ncmpcpp to use sane bindings
-alias ncm="ncmpcpp -b ~/.config/ncmpcpp/bindings"
