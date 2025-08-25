@@ -138,13 +138,12 @@ static const char *volume_up[] = { "wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@"
 static const char *volume_down[] = { "wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "5%-", NULL };
 static const char *volume_mute[] = { "wpctl", "set-mute", "@DEFAULT_AUDIO_SINK@", "toggle", NULL };
 static const char *audio_toggle[] = { "playerctl", "--player=mpd", "play-pause", NULL };
-static const char *audio_next[] = { "playerctl", "--player=mpd", "next", NULL };
-static const char *audio_prev[] = { "playerctl", "--player=mpd", "previous", NULL };
 
 static const char *networkmanager_dmenu[] = { "networkmanager_dmenu", NULL };
 static const char *dmenu_bluetooth[] = { "launch_bluetooth", NULL };
 static const char *cliphist[] = { "launch_cliphist", NULL };
 static const char *pavucontrol[] = { "pavucontrol", NULL };
+static const char *create_note[] = { "create_note", NULL };
 
 static const char *poweroff[] = { "poweroff", NULL };
 static const char *reboot[] = { "systemctl", "reboot", NULL };
@@ -163,6 +162,7 @@ static const Key keys[] = {
     { MODKEY|WLR_MODIFIER_SHIFT, -1, XKB_KEY_B,          spawn,          {.v = dmenu_bluetooth} },
     { MODKEY,                    -1, XKB_KEY_u,          spawn,          {.v = cliphist} },
     { MODKEY,                    -1, XKB_KEY_p,          spawn,          {.v = pavucontrol} },
+    { MODKEY,                    -1, XKB_KEY_n,          spawn,          {.v = create_note} },
 
 	{ 0, -1, XKB_KEY_XF86MonBrightnessUp,                spawn,          {.v = brightness_up} },
 	{ 0, -1, XKB_KEY_XF86MonBrightnessDown,              spawn,          {.v = brightness_down} },
@@ -170,8 +170,6 @@ static const Key keys[] = {
 	{ 0, -1, XKB_KEY_XF86AudioLowerVolume,               spawn,          {.v = volume_down} },
 	{ 0, -1, XKB_KEY_XF86AudioMute,                      spawn,          {.v = volume_mute} },
 	{ 0, -1, XKB_KEY_XF86AudioPlay,                      spawn,          {.v = audio_toggle} },
-	{ 0, -1, XKB_KEY_XF86AudioNext,                      spawn,          {.v = audio_next} },
-	{ 0, -1, XKB_KEY_XF86AudioPrev,                      spawn,          {.v = audio_prev} },
 
 	{ MODKEY,                    -1, XKB_KEY_j,          focusstack,     {.i = +1} },
 	{ MODKEY,                    -1, XKB_KEY_k,          focusstack,     {.i = -1} },
