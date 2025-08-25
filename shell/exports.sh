@@ -26,5 +26,7 @@ export FZF_CTRL_T_COMMAND="fd --type f --exclude '.*'"
 # required for rstudio
 export PATH=$PATH:/usr/lib/rstudio/rstudio
 export PATH=$PATH:$HOME/.local/bin/
+# for cargo
+export PATH=$PATH:$HOME/.cargo/bin/
 
 export PF_SOURCE="${HOME}/.config/pfetch/pfetchrc"
