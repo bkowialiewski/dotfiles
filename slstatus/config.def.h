@@ -69,6 +69,7 @@ static const char unknown_str[] = "n/a";
 
 static const struct arg args[] = {
 	/* function        format              argument */
+    // { run_command,     "%s | ",            "playerctl metadata --format '{{ artist }} - {{ title }}'"},
 	{ cpu_perc,        "cpu: %s% | ",      NULL },
     { run_command,     "vol: %s | ",       "wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $2}'" },
 	{ battery_perc,    "bat: %s% | ",      "BAT0" },
