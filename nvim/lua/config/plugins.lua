@@ -19,6 +19,13 @@ require("lazy").setup({
 
 	-- themes
 	"edeneast/nightfox.nvim",
+
+    {
+        'kyza0d/xeno.nvim',
+        lazy = false,
+        priority = 1000, -- Load colorscheme early
+    },
+
 	"psliwka/termcolors.nvim",
 	-- allows easy commenting
 	"numtostr/comment.nvim",
