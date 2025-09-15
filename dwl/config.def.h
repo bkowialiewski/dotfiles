@@ -128,9 +128,9 @@ static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TA
 
 /* commands */
 static const char *termcmd[] = { "foot", NULL };
-static const char *menucmd[] = { "fuzzel", NULL };
-static const char *screenshot_select[] = { "screenshot_select", NULL };
-static const char *screenshot_full[] = { "screenshot_full", NULL };
+static const char *menucmd[] = { "launch_launcher", NULL };
+static const char *screenshot[] = { "take_screenshot", NULL };
+
 static const char *brightness_up[] = { "brightnessctl", "set", "5%+", NULL };
 static const char *brightness_down[] = { "brightnessctl", "set", "5%-", NULL };
 
@@ -138,12 +138,14 @@ static const char *volume_up[] = { "wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@"
 static const char *volume_down[] = { "wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "5%-", NULL };
 static const char *volume_mute[] = { "wpctl", "set-mute", "@DEFAULT_AUDIO_SINK@", "toggle", NULL };
 static const char *audio_toggle[] = { "playerctl", "--player=mpd", "play-pause", NULL };
+static const char *select_music[] = { "select_music", NULL };
 
-static const char *networkmanager_dmenu[] = { "networkmanager_dmenu", NULL };
+static const char *networkmanager_dmenu[] = { "launch_networkmanager", NULL };
 static const char *dmenu_bluetooth[] = { "launch_bluetooth", NULL };
 static const char *cliphist[] = { "launch_cliphist", NULL };
 static const char *pavucontrol[] = { "pavucontrol", NULL };
 static const char *create_note[] = { "create_note", NULL };
+static const char *select_reference[] = { "select_reference", NULL };
 
 static const char *poweroff[] = { "poweroff", NULL };
 static const char *reboot[] = { "systemctl", "reboot", NULL };
@@ -156,13 +158,13 @@ static const Key keys[] = {
 	{ MODKEY,                    -1, XKB_KEY_d,          spawn,          {.v = menucmd} },
 	{ MODKEY,                    -1, XKB_KEY_Return,     spawn,          {.v = termcmd} },
 	{ MODKEY,                    -1, XKB_KEY_b,          toggletag,      {0} },
-	{ MODKEY,                    XKB_KEY_s, XKB_KEY_s,   spawn,          {.v = screenshot_select} },
-	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_s, XKB_KEY_f,   spawn,          {.v = screenshot_full} },
+	{ MODKEY,                    -1, XKB_KEY_s,          spawn,          {.v = screenshot} },
     { MODKEY|WLR_MODIFIER_SHIFT, -1, XKB_KEY_W,          spawn,          {.v = networkmanager_dmenu} },
     { MODKEY|WLR_MODIFIER_SHIFT, -1, XKB_KEY_B,          spawn,          {.v = dmenu_bluetooth} },
     { MODKEY,                    -1, XKB_KEY_u,          spawn,          {.v = cliphist} },
     { MODKEY,                    -1, XKB_KEY_p,          spawn,          {.v = pavucontrol} },
     { MODKEY,                    -1, XKB_KEY_n,          spawn,          {.v = create_note} },
+    { MODKEY,                    -1, XKB_KEY_r,          spawn,          {.v = select_reference} },
 
 	{ 0, -1, XKB_KEY_XF86MonBrightnessUp,                spawn,          {.v = brightness_up} },
 	{ 0, -1, XKB_KEY_XF86MonBrightnessDown,              spawn,          {.v = brightness_down} },
@@ -170,6 +172,7 @@ static const Key keys[] = {
 	{ 0, -1, XKB_KEY_XF86AudioLowerVolume,               spawn,          {.v = volume_down} },
 	{ 0, -1, XKB_KEY_XF86AudioMute,                      spawn,          {.v = volume_mute} },
 	{ 0, -1, XKB_KEY_XF86AudioPlay,                      spawn,          {.v = audio_toggle} },
+    { MODKEY|WLR_MODIFIER_SHIFT, -1, XKB_KEY_M,          spawn,          {.v = select_music} },
 
 	{ MODKEY,                    -1, XKB_KEY_j,          focusstack,     {.i = +1} },
 	{ MODKEY,                    -1, XKB_KEY_k,          focusstack,     {.i = -1} },

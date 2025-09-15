@@ -60,7 +60,7 @@ map('n', '<leader><leader>', ':noh<CR>')
 map('n', '<leader>c', ':CsvViewToggle<CR>')
 
 -- make suggestions appear
-map('i', '<C-Space>', '<C-x><C-n>')
+-- map('i', '<C-Space>', '<C-x><C-n>')
+map('i', '<C-o>', '<C-x><C-n>')
 map('i', '<C-j>', '<C-n>')
 map('i', '<C-k>', '<C-p>')
-

@@ -61,9 +61,27 @@ c("syntax on")
 
 c("set path+=**")
 
+-- Create your custom theme here
+-- require("xeno").new_theme("minimal", {
+--
+--     base = "#2e3440",
+--     accent = "#bf616a",
+--     contrast = -0.6,
+--     variation = 0.0,
+--
+--     highlights = {
+--         editor = {
+--           Normal = { bg = "#2e3440" }, -- fixed
+--         },
+--     }
+--
+--
+-- })
+-- vim.cmd('colorscheme minimal')
+
 c.colorscheme("nordfox")
--- c.colorscheme("kanagawa-wave")
--- c.colorscheme("lunaperche")
+-- c.colorscheme("oxocarbon")
+-- c.colorscheme("dangion")
 
 require("colorizer").setup()
 

@@ -27,6 +27,7 @@ alias gp='cd ~/pictures/'
 alias clip='wl-copy'
 # and paste it
 # alias pst='xclip -o -sel clip'
+
 alias pst='wl-paste'
 # to open files
 alias open='xdg-open &>/dev/null'

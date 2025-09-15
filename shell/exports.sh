@@ -9,7 +9,8 @@ export PRINTER="print_ULiege"
 # ls after cd into a directory
 # export PROMPT_COMMAND='[[ ${__new_wd:=$PWD} != $PWD ]] && ls; __new_wd=$PWD'
 
-export DMENU_BLUETOOTH_LAUNCHER="fuzzel"
+# export DMENU_BLUETOOTH_LAUNCHER="fuzzel"
+export DMENU_BLUETOOTH_LAUNCHER="mew"
 
 # those need to be explicit
 export XDG_DATA_HOME=$HOME/.local/share
