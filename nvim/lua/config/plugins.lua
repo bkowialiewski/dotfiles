@@ -17,8 +17,20 @@ vim.opt.rtp:prepend(lazypath)
 -- setup lazy.nvim
 require("lazy").setup({
 
-    -- themes
-    "edeneast/nightfox.nvim",
+	-- themes
+	"edeneast/nightfox.nvim",
+
+	"psliwka/termcolors.nvim",
+	-- allows easy commenting
+	"numtostr/comment.nvim",
+	-- fuzzy finder
+	"junegunn/fzf",
+	"junegunn/fzf.vim",
+
+	-- display hexadecimal colors
+	"norcalli/nvim-colorizer.lua",
+	-- to indent automatically
+	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 
     "psliwka/termcolors.nvim",
     -- allows easy commenting
