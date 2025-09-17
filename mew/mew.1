@@ -1,0 +1,163 @@
+.TH MEW 1 mew\-VERSION
+.SH NAME
+mew \- menu for wayland
+.SH SYNOPSIS
+.B mew
+.RB [ \-beiv ]
+.RB [ \-l
+.IR lines ]
+.RB [ \-o
+.IR output ]
+.RB [ \-p
+.IR prompt ]
+.RB [ \-f
+.IR font ]
+.RB [ \-nb
+.IR color ]
+.RB [ \-nf
+.IR color ]
+.RB [ \-sb
+.IR color ]
+.RB [ \-sf
+.IR color ]
+.P
+.BR mew-run " ..."
+.SH DESCRIPTION
+.B mew
+is an simple dynamic menu for Wayland that reads a list of newline\-separated items
+from stdin.  When the user selects an item and presses Return, their choice is printed
+to stdout and mew terminates.  Entering text will narrow the items to those
+matching the tokens in the input.
+.P
+.B mew-run
+is a script that lists programs in the user's $PATH and runs the result with
+.BR mew\ -e .
+.SH OPTIONS
+.TP
+.B \-b
+appear at the bottom of the screen.
+.TP
+.B \-e
+execute input or selection with
+.BR /bin/sh ,
+accompanied by a xdg activation token in it's environment, subsequently
+passing focus to the application ran.
+.TP
+.B \-i
+matches menu items case insensitively.
+.TP
+.BI \-l " lines"
+lists item vertically, with the given number of lines.
+.TP
+.BI \-o " output"
+mew is displayed on the output name supplied.
+.TP
+.BI \-p " prompt"
+defines the prompt to be displayed to the left of the input field.
+.TP
+.BI \-f " font"
+defines the font.
+.TP
+.BI \-nb " color"
+defines the normal background color of the format:
+.IR #RRGGBB[FF]
+.TP
+.BI \-nf " color"
+defines the normal foreground color of the format:
+.IR #RRGGBB[FF]
+.TP
+.BI \-sb " color"
+defines the selected background color of the format:
+.IR #RRGGBB[FF]
+.TP
+.BI \-sf " color"
+defines the selected foreground color of the format:
+.IR #RRGGBB[FF]
+.TP
+.B \-v
+prints version information to stdout, then exits.
+.SH USAGE
+mew is completely controlled by the keyboard.  Items are selected using the
+arrow keys, page up, page down, home, and end.
+.TP
+.B Tab
+Copy the selected item to the input field.
+.TP
+.B Return
+Confirm selection.  Prints the selected item to stdout and exits, returning
+success.
+.TP
+.B Ctrl-Return
+Confirm selection.  Prints the selected item to stdout and continues.
+.TP
+.B Shift\-Return
+Confirm input.  Prints the input text to stdout and exits, returning success.
+.TP
+.B Escape
+Exit without selecting an item, returning failure.
+.TP
+.B Ctrl-Left
+Move cursor to the start of the current word
+.TP
+.B Ctrl-Right
+Move cursor to the end of the current word
+.TP
+.B C\-a
+Home
+.TP
+.B C\-b
+Left
+.TP
+.B C\-c
+Escape
+.TP
+.B C\-d
+Delete
+.TP
+.B C\-e
+End
+.TP
+.B C\-f
+Right
+.TP
+.B C\-g
+Escape
+.TP
+.B C\-h
+Backspace
+.TP
+.B C\-i
+Tab
+.TP
+.B C\-j
+Return
+.TP
+.B C\-J
+Shift-Return
+.TP
+.B C\-k
+Delete line right
+.TP
+.B C\-m
+Return
+.TP
+.B C\-M
+Shift-Return
+.TP
+.B C\-n
+Down
+.TP
+.B C\-p
+Up
+.TP
+.B C\-u
+Delete line left
+.TP
+.B C\-w
+Delete word left
+.TP
+.B C\-y
+Paste from Wayland clipboard
+.TP
+.B C\-Y
+Paste from Wayland clipboard

@@ -1,0 +1,35 @@
+#!/bin/sh
+
+cachedir="${XDG_CACHE_HOME:-"$HOME/.cache"}"
+cache="$cachedir/mew_run"
+
+[ -d "$cachedir" ] || mkdir -p "$cachedir"
+
+uptodate() {
+	[ -f "$cache" ] || return 1
+	IFS=:
+	for path in $PATH; do
+		# non-POSIX
+		test "$path" -nt "$cache" && return 1
+	done
+	return 0
+}
+
+bins() {
+	IFS=:
+	for path in $PATH; do
+		for bin in "$path"/*; do
+			[ -x "$bin" ] && echo "${bin##*/}"
+		done
+	done
+}
+
+path() {
+	if uptodate; then
+		cat "$cache"
+	else
+		bins | sort -u | tee "$cache"
+	fi
+}
+
+path | mew -e "$@"
